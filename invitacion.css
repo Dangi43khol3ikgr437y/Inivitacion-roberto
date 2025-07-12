@@ -1,0 +1,402 @@
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://i.pinimg.com/736x/5b/0d/a8/5b0da822f50da54e8d844136e108f377.jpg');
+            background-size: cover; /* Cambiado para mejor adaptabilidad */
+            background-position: center;
+            background-attachment: fixed; /* Fija el fondo para que no se desplace con el contenido */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            perspective: 1000px;
+        }
+
+        .invitation-card {
+            background-color: #ffffff;
+            border: 5px solid #0056a3; /* Azul Spider-Man */
+            border-radius: 15px;
+            /* Sombra roja para un efecto de relieve y sombra principal */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 0 10px #c1171d; /* Rojo Spider-Man */
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .spiderman-header {
+            background-color: #c1171d; /* Rojo */
+            padding: 15px;
+        }
+
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .invitation-content {
+            padding: 20px 30px;
+        }
+
+        h1, h2, .name {
+            font-family: 'Bangers', cursive;
+            color: #c1171d; /* Rojo */
+            margin: 0;
+            letter-spacing: 2px;
+            /* Borde azul para el texto, estilo cómic */
+            text-shadow: 2px 2px 0 #0056a3, -2px -2px 0 #0056a3, 2px -2px 0 #0056a3, -2px 2px 0 #0056a3, 2px 2px 5px #000;
+        }
+
+        h1 {
+            /* Tipografía fluida: min, preferido, max */
+            font-size: clamp(2.8em, 8vw, 4em);
+        }
+
+        h2 {
+            /* Tipografía fluida */
+            font-size: clamp(1.4em, 4vw, 1.8em);
+            color: #0056a3; /* Azul */
+            text-shadow: 1px 1px 0 #c1171d, -1px -1px 0 #c1171d, 1px -1px 0 #c1171d, -1px 1px 0 #c1171d, 1px 1px 3px #000;
+            margin-bottom: 20px;
+        }
+
+        .celebrate {
+            font-size: 1.2em; 
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        .name {
+            /* Tipografía fluida */
+            font-size: clamp(2.5em, 7vw, 3.5em);
+            color: #0056a3; /* Azul */
+            margin-bottom: 25px;
+        }
+
+        .details {
+            background-color: #f0f0f0;
+            border: 2px dashed #c1171d;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .details p {
+            font-size: 1.1em;
+            color: #333;
+            margin: 8px 0;
+        }
+
+        .details p strong {
+            color: #0056a3; /* Azul */
+        }
+
+        .closing-message {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #c1171d; /* Rojo */
+        }
+
+        /* --- Estilos para la Cuenta Regresiva --- */
+        #countdown-container {
+            margin: 25px 0;
+            padding: 15px;
+            background-color: rgba(240, 240, 240, 0.9);
+            border-radius: 10px;
+            border: 2px solid #0056a3;
+        }
+
+        #countdown-container h3 {
+            font-family: 'Bangers', cursive;
+            color: #c1171d;
+            font-size: 1.6em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 0 #fff, 2px 2px 0 #0056a3;
+        }
+
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Aumentamos un poco el gap base */
+        }
+
+        .time-unit {
+            background: #0056a3;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 65px; /* Ajustamos el ancho mínimo */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .time-unit span {
+            font-size: 2em;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            display: block;
+        }
+
+        .time-unit label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+        }
+
+        /* --- Animación de Escritura --- */
+        .details-animated p {
+            visibility: hidden; /* Oculta los párrafos hasta que la animación comience */
+        }
+
+        .typewriter-cursor {
+            display: inline-block;
+            background-color: #333;
+            width: 3px;
+            height: 1.1em; /* Altura del cursor */
+            animation: blink 1s step-end infinite;
+            vertical-align: -2px; /* Alinea el cursor con el texto */
+            margin-left: 1px;
+        }
+
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366; /* Color oficial de WhatsApp */
+            color: #fff;
+            padding: 12px 25px;
+            margin-top: 20px;
+            border-radius: 25px; /* Bordes redondeados */
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif; /* Usar una fuente más legible para el botón */
+            font-size: 1.1em;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        @keyframes blink {
+            from, to { background-color: transparent }
+            50% { background-color: #333; }
+        }
+
+        .whatsapp-btn svg {
+            margin-right: 10px;
+        }
+
+        .map-container {
+            margin-top: 15px;
+            border-radius: 8px;
+            overflow: hidden; /* Asegura que el iframe respete el borde redondeado */
+            border: 2px solid #0056a3; /* Borde azul temático */
+            line-height: 0; /* Elimina espacio extra debajo del iframe */
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 200px; /* Altura del mapa */
+            border: none;
+        }
+
+        /* --- Estilos para la Galería de Fotos --- */
+        .gallery-container {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px dashed #c1171d;
+        }
+
+        .gallery-container h3 {
+            font-family: 'Bangers', cursive;
+            color: #0056a3;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 0 #c1171d, -1px -1px 0 #c1171d, 1px -1px 0 #c1171d, -1px 1px 0 #c1171d, 1px 1px 3px #000;
+        }
+
+        .gallery-thumbnails {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .gallery-thumb {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 3px solid #0056a3;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .gallery-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px #c1171d;
+        }
+
+        /* --- Estilos para el Modal de la Galería --- */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation: zoom 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)}
+            to {transform:scale(1)}
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        .spiderman-footer {
+            position: relative;
+            height: 100px; /* Espacio para la imagen */
+        }
+
+        .spiderman-swing {
+            position: absolute;
+            bottom: -20px;
+            right: -30px;
+            width: 150px;
+            transform: rotate(-15deg);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .spiderman-swing:hover {
+            transform: rotate(0deg) scale(1.1);
+        }
+
+        /* --- Estilos para Móviles (Diseño Adaptable) --- */
+        /* Usamos 600px como punto de quiebre para cubrir más dispositivos móviles */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px 10px; /* Menos padding en pantallas pequeñas */
+            }
+
+            .invitation-card {
+                /* Reducimos la sombra exterior para que no sea tan dominante */
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 0 6px #c1171d;
+            }
+
+            /* Las fuentes ya son fluidas con clamp(), no necesitamos re-declararlas */
+
+            /* Reducimos el efecto de sombra en los textos para mayor legibilidad */
+            h1, .name {
+                text-shadow: 1px 1px 0 #0056a3, -1px -1px 0 #0056a3, 1px -1px 0 #0056a3, -1px 1px 0 #0056a3, 1px 1px 3px #000;
+            }
+
+            .invitation-content { padding: 15px 20px; }
+            .spiderman-swing { width: 120px; right: -20px; bottom: -15px; }
+
+            #countdown {
+                gap: 8px; /* Reducimos el espacio entre contadores */
+                flex-wrap: wrap; /* Permitimos que los elementos se envuelvan */
+            }
+
+            .time-unit {
+                flex-grow: 1; /* Hacemos que los contadores ocupen el espacio disponible */
+                min-width: 60px;
+                padding: 8px;
+            }
+            .time-unit span { font-size: 1.5em; }
+            .time-unit label { font-size: 0.6em; }
+
+            .whatsapp-btn { padding: 10px 20px; font-size: 1em; }
+            .gallery-thumb { width: 70px; height: 70px; }
+        }
+
+/* --- Estilos para la Telaraña --- */
+.spider-web {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    /* Imagen SVG de la telaraña codificada en la URL para no necesitar archivos extra */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,0 L100,0 M0,0 L92.39,38.27 M0,0 L70.71,70.71 M0,0 L38.27,92.39 M0,0 L0,100" stroke="%23111111" stroke-opacity="0.4" stroke-width="1.5" fill="none"/><path d="M100,0 C80,20 50,20 20,80" stroke="%23111111" stroke-opacity="0.4" stroke-width="1.5" fill="none" /><path d="M80,0 C60,15 40,15 15,60" stroke="%23111111" stroke-opacity="0.4" stroke-width="1.5" fill="none" /><path d="M60,0 C45,10 30,10 10,45" stroke="%23111111" stroke-opacity="0.4" stroke-width="1.5" fill="none" /><path d="M40,0 C30,5 20,5 5,30" stroke="%23111111" stroke-opacity="0.4" stroke-width="1.5" fill="none" /></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none; /* Para que no interfiera con el contenido */
+}
+
+.spider-web.top-left {
+    top: -5px;
+    left: -5px;
+}
+
+.spider-web.top-right {
+    top: -5px;
+    right: -5px;
+    transform: scaleX(-1); /* Espejar la imagen para la esquina derecha */
+}
+
+/* --- Estilos para el Control de Música --- */
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    background-color: #c1171d; /* Rojo Spider-Man */
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+}
+
+.music-control:hover {
+    transform: scale(1.1);
+}
+
+.music-control svg {
+    fill: #fff;
+}
+
+.music-control .pause-icon { display: none; }
+.music-control.playing .play-icon { display: none; }
+.music-control.playing .pause-icon { display: block; }
