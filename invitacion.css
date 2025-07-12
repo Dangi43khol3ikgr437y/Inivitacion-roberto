@@ -45,8 +45,13 @@
             font-family: 'Bangers', cursive;
             color: #c1171d; /* Rojo */
             margin: 0;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 0 #0056a3, -2px -2px 0 #0056a3, 2px -2px 0 #0056a3, -2px 2px 0 #0056a3, 2px 2px 5px #000;
+            letter-spacing: 2px;
+            text-shadow: 
+                -2px -2px 0 #fff,  
+                 2px -2px 0 #fff,
+                -2px  2px 0 #fff,
+                 2px  2px 0 #fff,
+                 4px 4px 2px rgba(0,0,0,0.4);
             overflow-wrap: break-word; /* Permite que las palabras largas se dividan para no salirse del contenedor */
             word-wrap: break-word;     /* Compatibilidad con navegadores más antiguos */
             hyphens: auto;             /* Ayuda a dividir palabras con guiones de forma más natural (funciona mejor con lang="es" en el HTML) */
